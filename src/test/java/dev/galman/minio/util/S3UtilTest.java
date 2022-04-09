@@ -1,22 +1,16 @@
 package dev.galman.minio.util;
 
 import dev.galman.minio.property.AwsConfig;
-import dev.galman.minio.property.MinioConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashMap;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 class S3UtilTest {
 
