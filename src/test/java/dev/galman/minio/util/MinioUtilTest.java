@@ -3,6 +3,7 @@ package dev.galman.minio.util;
 
 import dev.galman.minio.property.MinioConfig;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
@@ -39,6 +40,7 @@ class MinioUtilTest {
     }
 
     @Test
+    @Disabled("테스트를 하실 경우 주석해주세요")
     void checkBucket(){
         MockMultipartFile file = new MockMultipartFile("file", "hello3.png", MediaType.IMAGE_PNG_VALUE, "Hello, World!".getBytes());
         String result =  objectStorageUtil.uploadFile(file,"");
