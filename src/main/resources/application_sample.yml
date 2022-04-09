@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: test
+minio:
+  endpoint: <endpoint>
+  accesskey: <accesskey>
+  secretkey: <secretkey>
+  bucket: <minio bucket name>
+gcp:
+  bucket: <gcs bucket name>
+  key: <service key 경로>
+
+cloud:
+  aws:
+    credentials:
+      accessKey: <accesskey>
+      secretKey: <secretkey>
+    s3:
+      bucket: <s3 bucket name>
+    region:
+      static: <region>
+    stack:
+      auto: false
