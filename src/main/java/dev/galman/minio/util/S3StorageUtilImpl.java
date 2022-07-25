@@ -39,11 +39,11 @@ public class S3StorageUtilImpl implements ObjectStorageUtil{
         if (fileName == null) {
             throw new IllegalStateException("file name null");
         }
-        if(fileName.contains(".jpg")) {
-            fileName = fileName.replace(".jpg", ".jpeg");
-        }
+        ObjectMetadata objectMetadata = new ObjectMetadata();
+        objectMetadata.setContentType(file.getContentType());
+        objectMetadata.setContentLength(file.getSize());
         try{
-            s3Client.putObject(new PutObjectRequest(awsConfig.getBucket(), filePath+fileName, file.getInputStream(), null)
+            s3Client.putObject(new PutObjectRequest(awsConfig.getBucket(), filePath+fileName, file.getInputStream(), objectMetadata)
                     .withCannedAcl(CannedAccessControlList.PublicRead));
             return s3Client.getUrl(awsConfig.getBucket(), filePath+fileName).toString();
         }catch(Exception e){
